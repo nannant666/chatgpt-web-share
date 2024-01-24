@@ -10,7 +10,7 @@
                   <md-people />
                 </n-icon>{{ $t('commons.activeUserIn5m') }}
               </div>
-              <div>{{ serverStatus.active_user_in_5m }}</div>
+              <div>{{ Math.min(9, serverStatus.active_user_in_5m) }}</div>
             </div>
           </n-list-item>
           <n-list-item>
@@ -20,10 +20,11 @@
                   <md-people />
                 </n-icon>{{ $t('commons.activeUserIn1h') }}
               </div>
-              <div>{{ serverStatus.active_user_in_1h }}</div>
+              <div>{{ Math.min(20, serverStatus.active_user_in_1h) }}</div>
             </div>
           </n-list-item>
           <n-list-item>
+            <!-- 其他项目不受限制 -->
             <div class="flex flex-row justify-between content-center">
               <div>
                 <n-icon class="mr-1">
@@ -34,6 +35,7 @@
             </div>
           </n-list-item>
           <n-list-item>
+            <!-- 其他项目不受限制 -->
             <div class="flex flex-row justify-between content-center">
               <div>
                 <n-icon class="mr-1">
@@ -50,10 +52,11 @@
                   <QueueFilled />
                 </n-icon>{{ $t('commons.chatbotWaitingCount') }}
               </div>
-              <div>{{ serverStatus.chatbot_waiting_count }}</div>
+              <div>{{ Math.min(1, serverStatus.chatbot_waiting_count) }}</div>
             </div>
           </n-list-item>
           <n-list-item>
+            <!-- 其他项目不受限制 -->
             <div class="flex flex-row justify-between content-center">
               <div>
                 <n-icon class="mr-1">
@@ -93,7 +96,6 @@ const handleExpand = (names: string[]) => {
 const updateData = () => {
   if (isExpaned.value)
     getServerStatusApi().then((res) => {
-      // console.log(res.data);
       serverStatus.value = res.data;
     });
 };
