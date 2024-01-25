@@ -10,10 +10,12 @@
             </a>
           </div>
           <div class="hidden sm:block">
-            <a class="h-full inline-block flex" href="https://hz.nan.plus" target="_blank">
-              <n-icon :color="appStore.theme == 'dark' ? 'white' : 'black'" :component="LogoGithub" />
-            </a>
-          </div>
+  <a class="h-full inline-block flex" href="https://t.me/@id1481013703" target="_blank">
+    <!-- 使用本地 SVG 文件 -->
+    <img src="@/" alt="My Icon" />
+     </a>
+     </div>
+
           <n-tag :bordered="false" type="success" size="small" class="hidden sm:inline-flex">
             {{ version }}
           </n-tag>
