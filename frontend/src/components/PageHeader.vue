@@ -10,8 +10,8 @@
             </a>
           </div>
           <div class="hidden sm:block">
-            <a class="h-full inline-block flex" href="https://t.me/@id1481013703" target="_blank">
-              <img src="@/components/icons/browsing/海绵宝宝系列.svg" alt="Custom Icon" style="height: 24px; width: 24px;" />
+            <a class="h-full inline-block flex" href="https://hz.nan.plus" target="_blank">
+              <!-- 海绵宝宝.svg 图标已删除 -->
             </a>
           </div>
           <n-tag :bordered="false" type="success" size="small" class="hidden sm:inline-flex">
