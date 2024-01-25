@@ -213,4 +213,8 @@ const resetPassword = () => {
 const jumpToAdminOrConv = async () => {
   if (isInAdmin.value) {
     await router.push({ name: 'conversation' });
-  } else
+  } else {
+    await router.push({ name: 'admin' });
+  }
+};
+</script>
