@@ -10,19 +10,16 @@
             </a>
           </div>
           <div class="hidden sm:block">
-  <a class="h-full inline-block flex" href="https://t.me/@id1481013703" target="_blank">
-    <!-- 使用本地 SVG 文件 -->
-    <img src="@/" alt="My Icon" />
-     </a>
-     </div>
-
+            <a class="h-full inline-block flex" href="https://t.me/@id1481013703" target="_blank">
+              <img src="@/components/icons/browsing/海绵宝宝系列.svg" alt="Custom Icon" style="height: 24px; width: 24px;" />
+            </a>
+          </div>
           <n-tag :bordered="false" type="success" size="small" class="hidden sm:inline-flex">
             {{ version }}
           </n-tag>
         </n-space>
       </template>
       <template #avatar>
-        <!-- <ChatGPTAvatar color="green" icon-style="default" :size="32" /> -->
         <CWSIcon />
       </template>
       <template #extra>
@@ -59,7 +56,6 @@
 <script setup lang="ts">
 import {
   InformationCircleOutline,
-  LogoGithub,
   LogOutOutline,
   PersonCircleOutline,
   SettingsSharp,
@@ -71,7 +67,6 @@ import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 
 import { updateUserMeApi } from '@/api/user';
-import ChatGPTAvatar from '@/components/ChatGPTAvatar.vue';
 import CWSIcon from '@/components/icons/CWSIcon.vue';
 import router from '@/router';
 import { useAppStore, useUserStore } from '@/store';
@@ -87,8 +82,6 @@ const userStore = useUserStore();
 const appStore = useAppStore();
 const route = useRoute();
 const version = 'v' + import.meta.env.PACKAGE_VERSION;
-
-// console.log(route);
 
 const isInAdmin = computed(() => {
   return route.path.startsWith('/admin');
@@ -220,8 +213,4 @@ const resetPassword = () => {
 const jumpToAdminOrConv = async () => {
   if (isInAdmin.value) {
     await router.push({ name: 'conversation' });
-  } else {
-    await router.push({ name: 'admin' });
-  }
-};
-</script>
+  } else
